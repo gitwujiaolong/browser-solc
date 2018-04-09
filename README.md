@@ -8,7 +8,7 @@ Forked from https://github.com/ericxtang/browser-solc to wrap it into a npm pack
 
 Solc is the solidity compiler.  It usually runs on the Ethereum node.  Browser-solidity is an example for Solc in the browser, but it's hard to pick apart just the solc library from the entire application.  This repo is a wrapper that helps you do that.  browser-solc is a browserified version of [solc-js](https://github.com/ethereum/solc-js).
 
-###[Demo app](https://s3.amazonaws.com/browser-solc.dappbench.com/index.html)
+## #[Demo app](https://s3.amazonaws.com/browser-solc.dappbench.com/index.html)
 
 You should use browser-solc if you:
 * Want to do `solc.compile()` in your Dapp
@@ -18,7 +18,7 @@ You should use browser-solc if you:
 
 `npm install --save browser-solc`
 
-##Usage:
+## Usage:
 
 ```javascript
 import browserSolc from 'browser-solc';
@@ -40,7 +40,7 @@ BrowserSolc.loadVersion("soljson-v0.4.6+commit.2dabbdf0.js", function(compiler) 
 ```
 
 
-##Development
+## Development
 To build `index.js`, run `npm run build`.
 
 Note: browser-solc does NOT implement the whole interface of solc-js.
