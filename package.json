@@ -1,11 +1,11 @@
 {
   "name": "browser-solc",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A wrapper of solc so that you can compile contracts in the browser",
+  "author": "Daniel Merrill",
   "license": "ISC",
   "scripts": {
-    "build": "mkdir -p build; browserify src/index.js -g yo-yoify -o build/app.js; babel build/app.js --out-file build/app.js",
+    "build": "browserify src/index.js -g yo-yoify -o build/app.js; babel build/app.js --out-file index.js",
     "csslint": "csslint --ignore=order-alphabetical --errors='errors,duplicate-properties,empty-rules' --exclude-list='assets/css/font-awesome.min.css' assets/css/",
     "lint": "standard"
   },
@@ -33,26 +33,27 @@
     "browserify": "^13.0.0",
     "csslint": "^1.0.2",
     "es6-shim": "^0.35.1",
+    "solc": "^0.4.21",
     "yo-yo": "^1.2.2",
     "yo-yoify": "^3.3.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericxtang/browser-solc.git"
+    "url": "git+https://github.com/dmerrill6/browser-solc.git"
   },
   "keywords": [
     "ethereum",
     "solidity",
     "compiler",
-    "browser"
+    "browser",
+    "solc"
   ],
   "bugs": {
-    "url": "https://github.com/ericxtang/browser-solc/issues"
+    "url": "https://github.com/dmerrill6/browser-solc/issues"
   },
   "homepage": "",
   "standard": {
     "ignore": [
-      "build/",
       "soljson.js"
     ]
   }
