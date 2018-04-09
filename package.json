@@ -1,6 +1,6 @@
 {
   "name": "browser-solc",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A wrapper of solc so that you can compile contracts in the browser",
   "author": "Daniel Merrill",
   "license": "ISC",
