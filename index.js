@@ -13839,29 +13839,19 @@
       document.getElementsByTagName("head")[0].appendChild(script);
     }
 
-    function loadVersion(version, callback) {
+    function loadSolcJson(url, callback) {
       delete window.Module;
       // NOTE: workaround some browsers
       window.Module = undefined;
-
-      var url = "https://ethereum.github.io/solc-bin/bin/" + version;
-      loadScript("solc", url, function () {
+      // var url = "https://ethereum.github.io/solc-bin/bin/" + version;
+      loadScript("", url, function () {
         var compiler = solc(window.Module);
         callback(compiler);
       });
     }
 
-    // Also loads global variables called "soljsonSources" and "soljsonReleases"
-    function getVersions(callback) {
-      var url = "https://ethereum.github.io/solc-bin/bin/list.js";
-      loadScript("solc-list", url, function () {
-        callback(soljsonSources, soljsonReleases);
-      });
-    }
-
     module.exports = {
-      'getVersions': getVersions,
-      'loadVersion': loadVersion
+      'loadSolcJson': loadSolcJson
     };
   }, { "es6-shim": 9, "solc/wrapper": 41 }], 57: [function (require, module, exports) {
     require('es6-shim');

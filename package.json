@@ -1,5 +1,5 @@
 {
-  "name": "browser-solc",
+  "name": "browser-solc-tron",
   "version": "1.0.0",
   "description": "A wrapper of solc so that you can compile contracts in the browser",
   "author": "Daniel Merrill",
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmerrill6/browser-solc.git"
+    "url": "git+https://github.com/gitwujiaolong/browser-solc.git"
   },
   "keywords": [
     "ethereum",
@@ -49,7 +49,7 @@
     "solc"
   ],
   "bugs": {
-    "url": "https://github.com/dmerrill6/browser-solc/issues"
+    "url": "https://github.com/gitwujiaolong/browser-solc/issues"
   },
   "homepage": "",
   "standard": {
@@ -57,5 +57,4 @@
       "soljson.js"
     ]
   }
-
 }
