@@ -1,7 +1,6 @@
 require('es6-shim')
 var solc = require('./browser-solc')
 
-/*
 var domIsReady = (function(domIsReady) {
    var isBrowserIeOrNot = function() {
       return (!document.attachEvent || typeof document.attachEvent === "undefined" ? 'not-ie' : 'ie');
@@ -32,6 +31,6 @@ var domIsReady = (function(domIsReady) {
    domIsReady(function() {
       window.BrowserSolc = solc;
    });
-})(document, window, domIsReady);*/
+})(document, window, domIsReady);
 
 module.exports=solc;

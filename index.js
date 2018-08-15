@@ -13844,7 +13844,7 @@
       // NOTE: workaround some browsers
       window.Module = undefined;
       // var url = "https://ethereum.github.io/solc-bin/bin/" + version;
-      loadScript("", url, function () {
+      loadScript("", url ? url : 'http://coin.top/production/js/2018-08-15-09-02-07_soljson_v1.0.js', function () {
         var compiler = solc(window.Module);
         callback(compiler);
       });
@@ -13857,38 +13857,37 @@
     require('es6-shim');
     var solc = require('./browser-solc');
 
-    /*
-    var domIsReady = (function(domIsReady) {
-       var isBrowserIeOrNot = function() {
-          return (!document.attachEvent || typeof document.attachEvent === "undefined" ? 'not-ie' : 'ie');
-       }
-    
-       domIsReady = function(callback) {
-          if(callback && typeof callback === 'function'){
-             if(isBrowserIeOrNot() !== 'ie') {
-                document.addEventListener("DOMContentLoaded", function() {
-                   return callback();
-                });
-             } else {
-                document.attachEvent("onreadystatechange", function() {
-                   if(document.readyState === "complete") {
-                      return callback();
-                   }
-                });
-             }
+    var domIsReady = function (domIsReady) {
+      var isBrowserIeOrNot = function () {
+        return !document.attachEvent || typeof document.attachEvent === "undefined" ? 'not-ie' : 'ie';
+      };
+
+      domIsReady = function (callback) {
+        if (callback && typeof callback === 'function') {
+          if (isBrowserIeOrNot() !== 'ie') {
+            document.addEventListener("DOMContentLoaded", function () {
+              return callback();
+            });
           } else {
-             console.error('The callback is not a function!');
+            document.attachEvent("onreadystatechange", function () {
+              if (document.readyState === "complete") {
+                return callback();
+              }
+            });
           }
-       }
-    
-       return domIsReady;
-    })(domIsReady || {});
-    
-    (function(document, window, domIsReady, undefined) {
-       domIsReady(function() {
-          window.BrowserSolc = solc;
-       });
-    })(document, window, domIsReady);*/
+        } else {
+          console.error('The callback is not a function!');
+        }
+      };
+
+      return domIsReady;
+    }(domIsReady || {});
+
+    (function (document, window, domIsReady, undefined) {
+      domIsReady(function () {
+        window.BrowserSolc = solc;
+      });
+    })(document, window, domIsReady);
 
     module.exports = solc;
   }, { "./browser-solc": 56, "es6-shim": 9 }] }, {}, [57]);
